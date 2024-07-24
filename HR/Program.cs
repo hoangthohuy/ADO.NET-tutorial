@@ -101,7 +101,7 @@ namespace HR
         }
         private void Calculator()
         {
-
+            int a = 0;
         }
     }
 }
