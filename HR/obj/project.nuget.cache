@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1bFVQXxcZAc=",
+  "dgSpecHash": "zEUeXB56CGY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hoang\\source\\repos\\ADO.NET-tutorial\\HR\\HR.csproj",
+  "projectFilePath": "C:\\Users\\hoang\\Source\\Repos\\ADO.NET-tutorial_2\\HR\\HR.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hoang\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\hoang\\.nuget\\packages\\azure.identity\\1.11.3\\azure.identity.1.11.3.nupkg.sha512",

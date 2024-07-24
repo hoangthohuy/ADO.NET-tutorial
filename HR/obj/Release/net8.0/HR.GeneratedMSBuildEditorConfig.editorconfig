@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HR
-build_property.ProjectDir = C:\Users\hoang\OneDrive\Desktop\Learning\Computer Science\C#\HR\HR\
+build_property.ProjectDir = C:\Users\hoang\Source\Repos\ADO.NET-tutorial_2\HR\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
