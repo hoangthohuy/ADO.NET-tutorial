@@ -7,14 +7,14 @@ namespace HR
     {
         static void Main(string[] args)
         {
-           
-            
+
+
             var builder = new ConfigurationBuilder();
             builder.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: false);
 
             IConfiguration configuration = builder.Build();
-            
-            using var conn =new SqlConnection(configuration.GetConnectionString("HRDB"));
+
+            using var conn = new SqlConnection(configuration.GetConnectionString("HRDB"));
             conn.Open();
 
 
@@ -37,7 +37,7 @@ namespace HR
                 Console.WriteLine($"ID :{reader.GetString(0)}, Name: {reader.GetSqlString(1)}");
             }
             reader.Close();
-            
+
         }
         private static void DisplayNumberOfCountries(SqlConnection conn)
         {
@@ -47,7 +47,7 @@ namespace HR
         }
 
         private static int AddEmployee(
-            String firstName, String lastName, String email, String phoneNumber, DateTime hireDate, int jobId, double salary, int managerId, int departmentId, SqlConnection conn  )
+            String firstName, String lastName, String email, String phoneNumber, DateTime hireDate, int jobId, double salary, int managerId, int departmentId, SqlConnection conn)
         {
             var cmd = conn.CreateCommand();
             cmd.CommandText = @"Insert into employees values
@@ -72,7 +72,7 @@ namespace HR
             cmd.Parameters.Add(new SqlParameter("@department_id", System.Data.SqlDbType.Int)).Value = departmentId;
 
 
-            var result =  cmd.ExecuteNonQuery();
+            var result = cmd.ExecuteNonQuery();
             return result;
 
         }
@@ -80,23 +80,27 @@ namespace HR
         private static void deleteEmployee(
             string email, SqlConnection conn)
         {
-            var cmd= conn.CreateCommand();
+            var cmd = conn.CreateCommand();
             cmd.CommandText = @"Delete from employees where email = @email";
 
             cmd.Parameters.Add(new SqlParameter("@email", System.Data.SqlDbType.VarChar, 100)).Value = email;
 
-            cmd.ExecuteScalar();
+            cmd.ExecuteNonQuery();
 
         }
 
-        private  static void UpdateEmployee(int Id,String lastName ,SqlConnection conn) 
+        private static void UpdateEmployee(int Id, String lastName, SqlConnection conn)
         {
             var cmd = conn.CreateCommand();
             cmd.CommandText = @"Update employees set last_name = @last_name where employee_id= @employee_id";
             cmd.Parameters.Add(new SqlParameter("@employee_id", System.Data.SqlDbType.Int)).Value = Id;
             cmd.Parameters.Add(new SqlParameter("@last_name", System.Data.SqlDbType.VarChar, 25)).Value = lastName;
-            cmd.ExecuteScalar();
+            cmd.ExecuteNonQuery();
 
+
+        }
+        private void Calculator()
+        {
 
         }
     }
